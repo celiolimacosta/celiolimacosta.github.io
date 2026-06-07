@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Célio Lima Costa — Analista de Dados</title>
+  <link rel="icon" type="image/png" href="assets/portfolio.png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background-color: #f5f5f5;
+      color: #1a1a2e;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HERO */
+    .hero {
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 56px 0 48px;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      border: 3px solid #e8e8e8;
+      flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1a1a2e;
+      border: 1px solid #d0d0d0;
+      border-radius: 6px;
+      padding: 5px 12px;
+      background: #fafafa;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-links img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
+
+    .contact-links a:hover {
+      border-color: #999;
+      background: #f0f0f0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    /* ABOUT */
+    .about {
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 40px 0;
+    }
+
+    .about p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* SKILLS */
+    .skills-section {
+      padding: 48px 0 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .section-header h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .section-header .line {
+      flex: 1;
+      height: 1px;
+      background: #e0e0e0;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      width: 72px;
+    }
+
+    .skill-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .skill-item span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: #555;
+      text-align: center;
+    }
+
+    /* PROJECTS */
+    .projects-section {
+      padding: 0 0 72px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.12s; }
+    .card:nth-child(3) { animation-delay: 0.19s; }
+
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+      transform: translateY(-3px);
+      border-color: #bbb;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 148px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-image-placeholder {
+      width: 100%;
+      height: 148px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .card-body {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 0.975rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      line-height: 1.4;
+    }
+
+    .card-description {
+      font-size: 0.865rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: #dde4ff;
+      color: #3730a3;
+      letter-spacing: 0.02em;
+    }
+
+    .tag.python     { background: #fef08a; color: #854d0e; }
+    .tag.sql        { background: #bbf7d0; color: #166534; }
+    .tag.pandas     { background: #fed7aa; color: #9a3412; }
+    .tag.databricks { background: #fbcfe8; color: #9d174d; }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .card-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #3730a3;
+    }
+
+    .card:hover .card-link {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: #bbb;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 600px) {
+      .hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .hero-photo {
+        width: 88px;
+        height: 88px;
+      }
+
+      .hero-text h1 {
+        font-size: 1.6rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <img src="assets/foto.png" alt="Foto de Célio Lima Costa" class="hero-photo" />
+        <div class="hero-text">
+          <h1>Célio Lima Costa</h1>
+          <p class="subtitle">Analista de Dados · SQL · Python · BI</p>
+          <div class="contact-links">
+            <a href="mailto:celiolimacosta@gmail.com">
+              <img src="assets/email.png" alt="Gmail" /> E-mail
+            </a>
+            <a href="https://wa.me/5531973605521" target="_blank">
+              <img src="assets/social.png" alt="WhatsApp" /> WhatsApp
+            </a>
+            <a href="https://www.linkedin.com/in/celiolimacosta" target="_blank">
+              <img src="assets/linkedin.png" alt="LinkedIn" /> LinkedIn
+            </a>
+            <a href="https://github.com/celiolimacosta" target="_blank">
+              <img src="assets/github.png" alt="GitHub" /> GitHub
+            </a>
+            <a href="https://drive.google.com/file/d/1jSEaoZ2SzaO8PaDCHsL2a_G4z31yghk4/view?usp=drive_link" target="_blank">
+              <img src="assets/cv.png" alt="Currículo" /> Currículo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="container">
+      <p>
+        Sou Analista de Dados, mas minha base vem da sustentação de sistemas e isso muda tudo na forma como
+        investigo um problema. Trabalho com SQL, Python e análise de logs para investigar problemas em produção,
+        identificar padrões de falha e apoiar times de produto e engenharia na tomada de decisão. Tenho experiência
+        com modelagem de dados, Power BI, Databricks, pipelines ELT e processamento distribuído com Spark.
+      </p>
+      <p>
+        Atuo em uma plataforma corporativa baseada em LiteLLM, com foco em observabilidade,
+        governança e análise do uso de modelos de IA. Esse contexto me permite unir experiência técnica,
+        visão analítica e entendimento operacional para construir análises que contam histórias sólidas e de fácil compreensão. Neste portfólio você encontra projetos que refletem essa forma de trabalhar.
+      </p>
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ferramentas</h2>
+        <div class="line"></div>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-item">
+          <img src="assets/python.png" alt="Python" />
+          <span>Python</span>
+        </div>
+
+        <div class="skill-item">
+          <img src="assets/Pandas.png" alt="Pandas" />
+          <span>Pandas</span>
+        </div>
+
+        <div class="skill-item">
+          <img src="assets/sql-database.png" alt="SQL" />
+          <span>SQL</span>
+        </div>
+
+        <div class="skill-item">
+          <img src="assets/Azure.png" alt="Azure" />
+          <span>Azure</span>
+        </div>
+
+        <div class="skill-item">
+          <img src="assets/Jupyter.png" alt="Jupyter" />
+          <span>Jupyter</span>
+        </div>
+
+        <div class="skill-item">
+          <img src="assets/git.png" alt="Git" />
+          <span>Git</span>
+        </div>
+
+        <div class="skill-item">
+          <img src="assets/spark.png" alt="Spark" />
+          <span>Spark</span>
+        </div>
+
+        <div class="skill-item">
+          <img src="assets/power-bi-icon.png" alt="Power BI" />
+          <span>Power BI</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Projetos</h2>
+        <div class="line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <a class="card" href="https://portifolio-celio-costa.notion.site/An-lise-de-Vendas-e-Performance-BikeStores-37410e8390b880138181dade421b8828" target="_blank">
+          <img src="assets/img_bikestores.jpg" alt="BikeStores" class="card-image" />
+          <div class="card-body">
+            <div class="card-title">Análise de Vendas e Performance — BikeStores</div>
+            <div class="card-description">
+              Projeto desenvolvido com base no banco de dados fictício BikeStores, amplamente utilizado para fins
+              educacionais. A base simula operações de uma rede de lojas de bicicletas, contendo informações sobre
+              produtos, clientes, vendas, funcionários e estoques entre 2016 e 2018.
+            </div>
+            <div class="tags">
+              <span class="tag sql">SQL</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-link">Ver análise →</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="https://portifolio-celio-costa.notion.site/Estamos-sendo-saudosistas-com-o-futebol-37410e8390b880119192cbc87e672836" target="_blank">
+          <img src="assets/img_futebol.jpg" alt="Futebol" class="card-image" />
+          <div class="card-body">
+            <div class="card-title">Estamos sendo saudosistas com o futebol?</div>
+            <div class="card-description">
+              Como integrante da geração millennial e apaixonado por futebol, é comum perceber diferenças marcantes
+              entre o futebol dos anos 1990 e 2000 e o futebol jogado atualmente. Partidas com menos goleadas, poucos
+              destaques individuais e uma sensação reduzida de espetáculo em campo.
+            </div>
+            <div class="tags">
+              <span class="tag python">Python</span>
+              <span class="tag pandas">Pandas</span>
+              <span class="tag">Exploratory Data Analysis</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-link">Ver análise →</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="https://portifolio-celio-costa.notion.site/Sinistros-de-Tr-nsito-no-Brasil-2021-2025-uma-an-lise-comparativa-com-Databricks-37410e8390b880bfbde5e740399640dd" target="_blank">
+          <img src="assets/img_sinistros.jpg" alt="Sinistros" class="card-image" />
+          <div class="card-body">
+            <div class="card-title">Sinistros de Trânsito no Brasil (2021–2025): uma análise comparativa com Databricks</div>
+            <div class="card-description">
+              Projeto que utiliza dados públicos disponibilizados pela Polícia Rodoviária Federal (PRF), que registram
+              sinistros de trânsito em vias públicas envolvendo veículos, pedestres ou animais, podendo resultar em
+              danos materiais, feridos ou vítimas fatais.
+            </div>
+            <div class="tags">
+              <span class="tag databricks">Databricks</span>
+              <span class="tag python">Python</span>
+              <span class="tag">Delta Lake</span>
+              <span class="tag">Data Engineering</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-link">Ver análise →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      Célio Lima Costa · celiolimacosta.github.io
+    </div>
+  </footer>
+
+</body>
+</html>
