@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Célio Lima Costa — Analista de Dados</title>
+  <title>Célio Lima Costa - Analista de Dados</title>
   <link rel="icon" type="image/png" href="assets/portfolio.png" />
   <style>
     * {
@@ -196,10 +196,16 @@
       display: flex;
       flex-direction: column;
       transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    .card-main {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
       text-decoration: none;
       color: inherit;
       cursor: pointer;
-      animation: fadeUp 0.4s ease both;
     }
 
     .card:nth-child(1) { animation-delay: 0.05s; }
@@ -229,7 +235,7 @@
     }
 
     .card-body {
-      padding: 20px 24px;
+      padding: 20px 24px 16px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -272,18 +278,47 @@
 
     .card-footer {
       margin-top: auto;
-      padding-top: 10px;
+      padding: 12px 24px 20px;
       border-top: 1px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
 
     .card-link {
       font-size: 0.85rem;
       font-weight: 600;
       color: #3730a3;
+      text-decoration: none;
     }
 
-    .card:hover .card-link {
+    .card-link:hover {
       text-decoration: underline;
+    }
+
+    .link-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #666;
+      text-decoration: none;
+    }
+
+    .link-github img {
+      width: 14px;
+      height: 14px;
+      opacity: 0.7;
+    }
+
+    .link-github:hover {
+      color: #1a1a2e;
+    }
+
+    .link-github:hover img {
+      opacity: 1;
     }
 
     /* FOOTER */
@@ -430,64 +465,79 @@
       </div>
       <div class="projects-grid">
 
-        <a class="card" href="https://portifolio-celio-costa.notion.site/An-lise-de-Vendas-e-Performance-BikeStores-37410e8390b880138181dade421b8828" target="_blank">
-          <img src="assets/img_bikestores.jpg" alt="BikeStores" class="card-image" />
-          <div class="card-body">
-            <div class="card-title">Análise de Vendas e Performance — BikeStores</div>
-            <div class="card-description">
-              Projeto desenvolvido com base no banco de dados fictício BikeStores, amplamente utilizado para fins
-              educacionais. A base simula operações de uma rede de lojas de bicicletas, contendo informações sobre
-              produtos, clientes, vendas, funcionários e estoques entre 2016 e 2018.
+        <div class="card">
+          <a class="card-main" href="https://portifolio-celio-costa.notion.site/An-lise-de-Vendas-e-Performance-BikeStores-37410e8390b880138181dade421b8828" target="_blank">
+            <img src="assets/img_bikestores.jpg" alt="BikeStores" class="card-image" />
+            <div class="card-body">
+              <div class="card-title">Análise de Vendas e Performance - BikeStores</div>
+              <div class="card-description">
+                Projeto desenvolvido com base no banco de dados fictício BikeStores, amplamente utilizado para fins
+                educacionais. A base simula operações de uma rede de lojas de bicicletas, contendo informações sobre
+                produtos, clientes, vendas, funcionários e estoques entre 2016 e 2018.
+              </div>
+              <div class="tags">
+                <span class="tag sql">SQL</span>
+              </div>
             </div>
-            <div class="tags">
-              <span class="tag sql">SQL</span>
-            </div>
-            <div class="card-footer">
-              <span class="card-link">Ver análise →</span>
-            </div>
+          </a>
+          <div class="card-footer">
+            <a class="card-link" href="https://portifolio-celio-costa.notion.site/An-lise-de-Vendas-e-Performance-BikeStores-37410e8390b880138181dade421b8828" target="_blank">Ver análise →</a>
+            <a class="link-github" href="https://github.com/celiolimacosta/celiolimacosta-bike-stores-sql-project" target="_blank">
+              <img src="assets/github.png" alt="" /> Código no GitHub
+            </a>
           </div>
-        </a>
+        </div>
 
-        <a class="card" href="https://portifolio-celio-costa.notion.site/Estamos-sendo-saudosistas-com-o-futebol-37410e8390b880119192cbc87e672836" target="_blank">
-          <img src="assets/img_futebol.jpg" alt="Futebol" class="card-image" />
-          <div class="card-body">
-            <div class="card-title">Estamos sendo saudosistas com o futebol?</div>
-            <div class="card-description">
-              Como integrante da geração millennial e apaixonado por futebol, é comum perceber diferenças marcantes
-              entre o futebol dos anos 1990 e 2000 e o futebol jogado atualmente. Partidas com menos goleadas, poucos
-              destaques individuais e uma sensação reduzida de espetáculo em campo.
+        <div class="card">
+          <a class="card-main" href="https://portifolio-celio-costa.notion.site/Estamos-sendo-saudosistas-com-o-futebol-37410e8390b880119192cbc87e672836" target="_blank">
+            <img src="assets/img_futebol.jpg" alt="Futebol" class="card-image" />
+            <div class="card-body">
+              <div class="card-title">Estamos sendo saudosistas com o futebol?</div>
+              <div class="card-description">
+                Como integrante da geração millennial e apaixonado por futebol, é comum perceber diferenças marcantes
+                entre o futebol dos anos 1990 e 2000 e o futebol jogado atualmente. Partidas com menos goleadas, poucos
+                destaques individuais e uma sensação reduzida de espetáculo em campo.
+              </div>
+              <div class="tags">
+                <span class="tag python">Python</span>
+                <span class="tag pandas">Pandas</span>
+                <span class="tag">Exploratory Data Analysis</span>
+              </div>
             </div>
-            <div class="tags">
-              <span class="tag python">Python</span>
-              <span class="tag pandas">Pandas</span>
-              <span class="tag">Exploratory Data Analysis</span>
-            </div>
-            <div class="card-footer">
-              <span class="card-link">Ver análise →</span>
-            </div>
+          </a>
+          <div class="card-footer">
+            <a class="card-link" href="https://portifolio-celio-costa.notion.site/Estamos-sendo-saudosistas-com-o-futebol-37410e8390b880119192cbc87e672836" target="_blank">Ver análise →</a>
+            <a class="link-github" href="https://github.com/celiolimacosta/celiolimacosta-saudosismo-no-futebol-python-project" target="_blank">
+              <img src="assets/github.png" alt="" /> Código no GitHub
+            </a>
           </div>
-        </a>
+        </div>
 
-        <a class="card" href="https://portifolio-celio-costa.notion.site/Sinistros-de-Tr-nsito-no-Brasil-2021-2025-uma-an-lise-comparativa-com-Databricks-37410e8390b880bfbde5e740399640dd" target="_blank">
-          <img src="assets/img_sinistros.jpg" alt="Sinistros" class="card-image" />
-          <div class="card-body">
-            <div class="card-title">Sinistros de Trânsito no Brasil (2021–2025): uma análise comparativa com Databricks</div>
-            <div class="card-description">
-              Projeto que utiliza dados públicos disponibilizados pela Polícia Rodoviária Federal (PRF), que registram
-              sinistros de trânsito em vias públicas envolvendo veículos, pedestres ou animais, podendo resultar em
-              danos materiais, feridos ou vítimas fatais.
+        <div class="card">
+          <a class="card-main" href="https://portifolio-celio-costa.notion.site/Sinistros-de-Tr-nsito-no-Brasil-2021-2025-uma-an-lise-comparativa-com-Databricks-37410e8390b880bfbde5e740399640dd" target="_blank">
+            <img src="assets/img_sinistros.jpg" alt="Sinistros" class="card-image" />
+            <div class="card-body">
+              <div class="card-title">Sinistros de Trânsito no Brasil (2021-2025): uma análise comparativa com Databricks</div>
+              <div class="card-description">
+                Projeto que utiliza dados públicos disponibilizados pela Polícia Rodoviária Federal (PRF), que registram
+                sinistros de trânsito em vias públicas envolvendo veículos, pedestres ou animais, podendo resultar em
+                danos materiais, feridos ou vítimas fatais.
+              </div>
+              <div class="tags">
+                <span class="tag databricks">Databricks</span>
+                <span class="tag python">Python</span>
+                <span class="tag">Delta Lake</span>
+                <span class="tag">Data Engineering</span>
+              </div>
             </div>
-            <div class="tags">
-              <span class="tag databricks">Databricks</span>
-              <span class="tag python">Python</span>
-              <span class="tag">Delta Lake</span>
-              <span class="tag">Data Engineering</span>
-            </div>
-            <div class="card-footer">
-              <span class="card-link">Ver análise →</span>
-            </div>
+          </a>
+          <div class="card-footer">
+            <a class="card-link" href="https://portifolio-celio-costa.notion.site/Sinistros-de-Tr-nsito-no-Brasil-2021-2025-uma-an-lise-comparativa-com-Databricks-37410e8390b880bfbde5e740399640dd" target="_blank">Ver análise →</a>
+            <a class="link-github" href="https://github.com/celiolimacosta/sinistros-transito-br-databricks" target="_blank">
+              <img src="assets/github.png" alt="" /> Código no GitHub
+            </a>
           </div>
-        </a>
+        </div>
 
       </div>
     </div>
